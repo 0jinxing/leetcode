@@ -20,12 +20,12 @@ var loudAndRich = function(richer, quiet) {
 
 var dfs = function(quiet, graph, key, ans) {
     if (ans[key] >= 0) return ans[key];
-    var an = key;
+    var flag = key;
     var childs = graph.get(key) || [];
     for (var c of childs) {
-        var can = dfs(quiet, graph, c, ans);
-        if (quiet[can] < quiet[an]) an = can;
+        var cans = dfs(quiet, graph, c, ans);
+        if (quiet[cans] < quiet[flag]) flag = cans;
     }
-    ans[key] = an;
+    ans[key] = flag;
     return ans[key];
 }
