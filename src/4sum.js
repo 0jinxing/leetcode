@@ -5,5 +5,7 @@
  * @return {number[][]}
  */
 var fourSum = function(nums, target) {
-    // TODO
+    
 };
+
+console.log(fourSum([1, 0, -1, 0, -2, 2], 0));
